@@ -1,27 +1,64 @@
-# PubsubPattern
+# Angular PubSub Pattern
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+The Angular PubSub pattern offers an intuitive and standardized method for embracing the Publish-Subscribe model within Angular applications. Central to this design is its ability to foster decoupled interactions between components through event dispatching and subscriptions. While it's meticulously crafted to integrate seamlessly with the Angular ecosystem, a unique feature of this architecture is its capability to be invoked from outside Angular, leveraging the global `window` object
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Introduction](#introduction)
+- [PubSub Design Pattern](#pubsub-design-pattern)
+- [Usage](#usage)
+- [Goal of the System](#goal-of-the-system)
 
-## Code scaffolding
+## Introduction
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+With the expansion of modern web applications, there's a growing necessity for diverse application parts to interact based on events rather than tight interconnections. This is precisely where the Publish-Subscribe (PubSub) pattern becomes invaluable. Our Angular PubSub system is designed to address this event-driven communication, seamlessly integrating with Angular's change detection through zones and providing a global interface on the `window` object for both internal and external triggers.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## PubSub Design Pattern
 
-## Running unit tests
+The Publish-Subscribe pattern, often referred to as PubSub, is a messaging pattern where senders of messages (publishers) do not program the messages to be sent directly to specific receivers (subscribers). Instead, published messages are characterized into classes, without knowledge of which subscribers (if any) there might be. Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers there are.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This PubSub design in Angular maintains a list of subscribers for each event. When an event is fired, it looks up these subscribers and runs the registered callbacks.
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Defining Events
 
-## Further help
+Events are defined in the `events-enum.ts` file. An example is as follows:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```typescript
+export enum GlobalEvents {
+  PAGE_VIEWED = 'pageViewed',
+  USER_LOGIN = 'userLogin',
+  BUTTON_CLICKED = 'peekABoo',
+}```
+
+### Firing Events
+
+Events can be fired using the `EventFireHelper` class. This provides a straightforward way to trigger events from anywhere in the codebase. For instance:
+
+```typescript
+EventFireHelper.fire(GlobalEvents.PAGE_VIEWED, [
+  { pageName: 'Home Page', time: new Date() },
+]);
+```
+
+### Subscribing to Events
+Components can subscribe to events using the global subscribeToAngularEvent function available on the window object:
+
+```typescript
+window['subscribeToAngularEvent'](eventName, callbackFunction);
+```
+
+The callback function will be executed whenever the specified event is fired.
+
+### Unsubscribing from Events
+If a component no longer wishes to be notified of an event, it can unsubscribe using:
+
+```typescript
+window['unsubscribeFromAngularEvent'](eventName);
+```
+
+## Goal of the Design
+
+The primary goal of the Angular PubSub system is to provide a robust event-driven architecture. This enables different parts of the application to communicate and react to specific events without being directly interconnected. By exposing a global interface on the `window` object, it also ensures versatility and wider applicability, bridging the gap between Angular and non-Angular scripts.
