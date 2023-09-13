@@ -2,13 +2,6 @@
 
 The Angular PubSub pattern offers an intuitive and standardized method for embracing the Publish-Subscribe model within Angular applications. Central to this design is its ability to foster decoupled interactions between components through event dispatching and subscriptions. While it's meticulously crafted to integrate seamlessly with the Angular ecosystem, a unique feature of this architecture is its capability to be invoked from outside Angular, leveraging the global `window` object
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [PubSub Design Pattern](#pubsub-design-pattern)
-- [Usage](#usage)
-- [Goal of the System](#goal-of-the-system)
-
 ## Introduction
 
 With the expansion of modern web applications, there's a growing necessity for diverse application parts to interact based on events rather than tight interconnections. This is precisely where the Publish-Subscribe (PubSub) pattern becomes invaluable. Our Angular PubSub system is designed to address this event-driven communication, seamlessly integrating with Angular's change detection through zones and providing a global interface on the `window` object for both internal and external triggers.
