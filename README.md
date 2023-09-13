@@ -4,19 +4,19 @@ The Angular PubSub pattern offers an intuitive and standardized method for embra
 
 ## Introduction
 
-With the expansion of modern web applications, there's a growing necessity for diverse application parts to interact based on events rather than tight interconnections. This is precisely where the Publish-Subscribe (PubSub) pattern becomes invaluable. Our Angular PubSub system is designed to address this event-driven communication, seamlessly integrating with Angular's change detection through zones and providing a global interface on the `window` object for both internal and external triggers.
+With the expansion of modern web applications, there's a growing necessity for diverse application parts to interact based on events rather than tight interconnections. This is precisely where the Publish-Subscribe (Pub-Sub) pattern becomes invaluable. Our Angular PubSub system is designed to address this event-driven communication, seamlessly integrating with Angular's change detection through zones and providing a global interface on the `window` object for both internal and external triggers.
 
 ![](https://github.com/emrahumut/angular-pubsub-pattern/blob/main/src/assets/gif/gif2.gif)
 
-## PubSub Design Pattern
+## Pub-Sub Design Pattern
 
-The Publish-Subscribe pattern, often referred to as PubSub, is a messaging pattern where senders of messages (publishers) do not program the messages to be sent directly to specific receivers (subscribers). Instead, published messages are characterized into classes, without knowledge of which subscribers (if any) there might be. Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers there are.
+The Publish-Subscribe pattern, often referred to as Pub-Sub, is a messaging pattern where senders of messages (publishers) do not program the messages to be sent directly to specific receivers (subscribers). Instead, published messages are characterized into classes, without knowledge of which subscribers (if any) there might be. Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers there are.
 
-This PubSub design in Angular maintains a list of subscribers for each event. When an event is fired, it looks up these subscribers and runs the registered callbacks.
+This Pub-Sub design in Angular maintains a list of subscribers for each event. When an event is fired, it looks up these subscribers and runs the registered callbacks.
 
 ## Goal of the Design
 
-The primary goal of the Angular PubSub system is to provide a robust event-driven architecture. This enables different parts of the application to communicate and react to specific events without being directly interconnected. By exposing a global interface on the `window` object, it also ensures versatility and wider applicability, bridging the gap between Angular and non-Angular scripts.
+The primary goal of the Angular Pub-Sub system is to provide a robust event-driven architecture. This enables different parts of the application to communicate and react to specific events without being directly interconnected. By exposing a global interface on the `window` object, it also ensures versatility and wider applicability, bridging the gap between Angular and non-Angular scripts.
 
 ![](https://github.com/emrahumut/angular-pubsub-pattern/blob/main/src/assets/gif/gif1.gif)
 
