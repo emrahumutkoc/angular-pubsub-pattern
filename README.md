@@ -1,15 +1,12 @@
 # Pub-Sub Pattern for Angular
 
-![](https://github.com/emrahumut/angular-pubsub-pattern/blob/main/src/assets/gif/gif2.gif)
-![](https://github.com/emrahumut/angular-pubsub-pattern/blob/main/src/assets/gif/gif1.gif)
-
-
 The Angular PubSub pattern offers an intuitive and standardized method for embracing the Publish-Subscribe model within Angular applications. Central to this design is its ability to foster decoupled interactions between components through event dispatching and subscriptions. While it's meticulously crafted to integrate seamlessly with the Angular ecosystem, a unique feature of this architecture is its capability to be invoked from outside Angular, leveraging the global `window` object
 
 ## Introduction
 
 With the expansion of modern web applications, there's a growing necessity for diverse application parts to interact based on events rather than tight interconnections. This is precisely where the Publish-Subscribe (PubSub) pattern becomes invaluable. Our Angular PubSub system is designed to address this event-driven communication, seamlessly integrating with Angular's change detection through zones and providing a global interface on the `window` object for both internal and external triggers.
 
+![](https://github.com/emrahumut/angular-pubsub-pattern/blob/main/src/assets/gif/gif2.gif)
 
 ## PubSub Design Pattern
 
@@ -20,6 +17,8 @@ This PubSub design in Angular maintains a list of subscribers for each event. Wh
 ## Goal of the Design
 
 The primary goal of the Angular PubSub system is to provide a robust event-driven architecture. This enables different parts of the application to communicate and react to specific events without being directly interconnected. By exposing a global interface on the `window` object, it also ensures versatility and wider applicability, bridging the gap between Angular and non-Angular scripts.
+
+![](https://github.com/emrahumut/angular-pubsub-pattern/blob/main/src/assets/gif/gif1.gif)
 
 ## Usage
 
