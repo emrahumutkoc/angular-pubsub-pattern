@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     },
     [GlobalEvents.USER_LOGIN]: (data: any) => {
       // Do what ever you want.
-      console.log(`${data.username} is logged in on ${data.time}`);
+      console.log(`${data.username} is logged-in on ${data.time}`);
     },
     [GlobalEvents.BUTTON_CLICKED]: (data: any) => {
       console.log(`${data.data} from app.component.ts`);
