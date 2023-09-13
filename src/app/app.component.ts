@@ -13,11 +13,11 @@ export class AppComponent implements OnInit {
   private eventMap = {
     [GlobalEvents.PAGE_VIEWED]: (data: any) => {
       // Do the page viewed event action
-      console.log(`${data?.pageName} is reviewed at ${data?.time}`);
+      console.log(`${data?.pageName} is reviewed on ${data?.time}`);
     },
     [GlobalEvents.USER_LOGIN]: (data: any) => {
       // Do what ever you want.
-      console.log(`${data.username} is logged in at ${data.time}`);
+      console.log(`${data.username} is logged in on ${data.time}`);
     },
     [GlobalEvents.BUTTON_CLICKED]: (data: any) => {
       console.log(`${data.data} from app.component.ts`);
