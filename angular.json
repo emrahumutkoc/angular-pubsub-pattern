@@ -3,17 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pubsub-pattern": {
+    "angular-pubsub-pattern": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "pubsub",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pubsub-pattern",
+            "outputPath": "dist/angular-pubsub-pattern",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pubsub-pattern:build:production"
+              "browserTarget": "angular-pubsub-pattern:build:production"
             },
             "development": {
-              "browserTarget": "pubsub-pattern:build:development"
+              "browserTarget": "angular-pubsub-pattern:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pubsub-pattern:build"
+            "browserTarget": "angular-pubsub-pattern:build"
           }
         },
         "test": {

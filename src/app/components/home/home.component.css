@@ -1,0 +1,32 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 769px) {
+  .grid-container {
+    grid-template-columns: 0.5fr 1fr;
+  }
+}
+
+button {
+  margin-top: 40%;
+  width: 100%;
+  padding: 10px;
+  top: 40%;
+  background-color: #004d7a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #003955;
+}
+
+.button-group {
+  max-width: 400px;
+}
