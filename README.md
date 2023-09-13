@@ -20,6 +20,10 @@ The Publish-Subscribe pattern, often referred to as PubSub, is a messaging patte
 
 This PubSub design in Angular maintains a list of subscribers for each event. When an event is fired, it looks up these subscribers and runs the registered callbacks.
 
+## Goal of the Design
+
+The primary goal of the Angular PubSub system is to provide a robust event-driven architecture. This enables different parts of the application to communicate and react to specific events without being directly interconnected. By exposing a global interface on the `window` object, it also ensures versatility and wider applicability, bridging the gap between Angular and non-Angular scripts.
+
 ## Usage
 
 ### Defining Events
@@ -59,7 +63,3 @@ If a component no longer wishes to be notified of an event, it can unsubscribe u
 ```typescript
 window['unsubscribeFromAngularEvent'](eventName);
 ```
-
-## Goal of the Design
-
-The primary goal of the Angular PubSub system is to provide a robust event-driven architecture. This enables different parts of the application to communicate and react to specific events without being directly interconnected. By exposing a global interface on the `window` object, it also ensures versatility and wider applicability, bridging the gap between Angular and non-Angular scripts.
