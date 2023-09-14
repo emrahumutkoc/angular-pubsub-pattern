@@ -1,6 +1,6 @@
 # Pub-Sub Pattern for Angular
 
-The Angular Pub-Sub pattern offers an intuitive and standardized method for embracing the Publish-Subscribe model within Angular applications. Central to this design is its ability to foster decoupled interactions between components through event dispatching and subscriptions. While it's meticulously crafted to integrate seamlessly with the Angular ecosystem, a unique feature of this architecture is its capability to be invoked from outside Angular, leveraging the global `window` object
+Angular Pub-Sub pattern offers an intuitive and standardized method for embracing the Publish-Subscribe model within Angular applications. Central to this design is its ability to foster decoupled interactions between components through event dispatching and subscriptions. While it's meticulously crafted to integrate seamlessly with the Angular ecosystem, a unique feature of this architecture is its capability to be invoked from outside Angular, leveraging the global `window` object
 
 ## Introduction
 
